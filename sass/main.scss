@@ -1,0 +1,184 @@
+$primary-color: #cca43b;
+$primary-dark-color: #242f40;
+$bg-dark-color: #e5e5e5;
+$bg-light-color: #eee;
+$dark-color: #363636;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.25rem 2.5rem;
+  border-radius: 5px;
+
+  color: $dark-color;
+  transition: 0.25s ease;
+
+  i {
+    padding: 0.1rem 0 0 0.25rem;
+    opacity: 0;
+  }
+  &:hover {
+    background: $primary-dark-color;
+    color: $primary-color;
+    i {
+      opacity: 1;
+    }
+  }
+}
+
+/* Navbar */
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background: $bg-dark-color;
+  height: 70px;
+
+  border-bottom: 5px solid $primary-dark-color;
+  #main-nav {
+    display: flex;
+    justify-content: space-between;
+
+    .links {
+      ul {
+        display: flex;
+
+        height: 100%;
+        li {
+          a {
+            color: $dark-color;
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            height: 70px;
+            display: flex; /*Center fuckin vertically*/
+            justify-content: center;
+            flex-direction: column; /*fuckin took so long, why even*/
+            transition: 0.25s ease;
+            &:hover {
+              background: $dark-color;
+              color: $bg-light-color;
+              border-bottom: 5px solid $bg-dark-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#me {
+  font-size: 4rem;
+  background-color: $primary-dark-color;
+  color: $bg-dark-color;
+  div {
+    text-align: center;
+    padding-top: 250px;
+  }
+  height: 100vh;
+  border-bottom: 5px solid $bg-dark-color;
+}
+
+/* Projects */
+#projects {
+  background: $dark-color;
+  padding: 2rem;
+  h2 {
+    font-size: 3rem;
+    padding: 0 0 2rem 0;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  #projects-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(400px, 1fr)
+    ); /*Responsive grid thingy, sick*/
+    grid-gap: 2rem;
+    justify-items: center;
+    grid-auto-flow: row;
+    .project-box {
+      padding: 2rem;
+      border: 4px solid $primary-color;
+      background: $bg-dark-color;
+      width: 400px;
+      height: 400px;
+
+      .img-box {
+        width: 100%;
+        height: 250px;
+        background: $primary-color;
+        border: 2px groove $dark-color;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .description-box {
+        text-align: center;
+        h3 {
+          padding: 0.5rem 0;
+          font-size: 1.3rem;
+        }
+        p {
+          padding: 0 0.25rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  border-top: 5px solid $primary-color;
+  color: $dark-color;
+  background: $bg-dark-color;
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+  ul {
+    display: flex;
+    text-align: center;
+    width: 700px;
+    margin: auto;
+
+    li {
+      a {
+        padding: 1rem;
+        margin: 2rem;
+        display: inline-block;
+        color: $dark-color;
+        background: $bg-light-color;
+        border-radius: 10px;
+        transition: 0.25s ease;
+        &:hover {
+          background: $primary-dark-color;
+          color: $primary-color;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
